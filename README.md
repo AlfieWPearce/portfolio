@@ -16,8 +16,8 @@ Music is originally made _(in flat.io)_ though not originally for this portfolio
 
 **-- Key --**
 
-- Red Badge is the Programming languages used
-- Green Badeg is the type of Project
+- Red Badge is the Programming language(s) used
+- Green Badge is the type of Project
 - Gold Badge is the difficulty of the programme to make
 
 **--**
@@ -31,7 +31,7 @@ cd portfolio
 open index.html
 ```
 Or visit the live version hosted via GitHub Pages at:
-[https://alfieofrosehouse.github.io/portfolio/](https://alfieofrosehouse.github.io/portfolio/)
+[https://alfiewpearce.github.io/portfolio/](https://alfiewpearce.github.io/portfolio/)
 
 **--**
 
