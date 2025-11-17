@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Alfie | Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
     
-    <!-- P5.js background extension -->
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
     <script src="background.js"></script>
 
@@ -36,15 +35,15 @@
 
         // Start music after user interaction
         ['click', 'touchstart'].forEach(event => {
-          window.addEventListener(event, function () {
-            audio.play().catch(e => {
-              console.warn('Playback Failiure', e);
-            });
-          }, { once: true });
+          window.addEventListener(event, () => audio.play().catch(() => {}),
+          { once: true });
         });
 
+        // Set default theme
+        document.documentElement.setAttribute("data-theme", "dark");
+
         // Toggle the theme (light/dark)
-        toggleThemeBtn.addEventListener("click", function () {
+        toggleThemeBtn.addEventListener("click", () => {
           const currentTheme = document.documentElement.getAttribute("data-theme");
           const newTheme = currentTheme === "light" ? "dark" : "light";
           document.documentElement.setAttribute("data-theme", newTheme);
@@ -52,16 +51,13 @@
         });
 
         // Toggle the visibility of archived projects        
-        legacyToggle.addEventListener("click", function () {
+        legacyToggle.addEventListener("click", () => {
           legacyList.classList.toggle("hidden");
           legacyToggle.classList.toggle("active");
           legacyToggle.innerHTML = legacyList.classList.contains("hidden")
             ? "Old Projects ▼"
             : "Old Projects ▲";
         });
-
-        // Set default theme
-        document.documentElement.setAttribute("data-theme", "dark");
 
         function updateClock() { //Recursive function repeating every exact second
           const now = new Date(Date.now());
@@ -117,7 +113,31 @@
         </div>
       </div>
 
+      
       <div class="body">
+        <section>
+          <h2>Main Projects</h2>
+          <ul class="projectList">
+            <li>
+              <div class="project-title">
+                <span>Bridge (A‑Level Coursework)</span>
+                <span class="badge red">HTML|CSS|JS</span>
+                <span class="badge green">Game</span>
+                <span class="badge gold">Level 2</span>
+              </div>
+              <div class="project-description">An implementation of the gameplay of Contract Bridge (the card game).</div>
+            </li>
+            <li>
+              <div class="project-title">
+                <span>Solar System Simulator (WIP)</span>
+                <span class="badge red">JS</span>
+                <span class="badge green">Physics</span>
+                <span class="badge gold">Level 3</span>
+              </div>
+              <div class="project-description">A gravitational simulation with orbital mechanics, custom trails, and scalable rendering.</div>
+            </li>
+          </ul>
+        </section>
         <section aria-labelledby="recent-projects">
           <h2 id="recent-projects">Recent Projects</h2>
           <ul class="projectList">
