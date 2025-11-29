@@ -26,7 +26,7 @@ Music is originally made _(in flat.io)_ though not originally for this portfolio
 
 To view this portfolio locally, clone this repository and open the ```bash index.html``` file in your web browser:
 ```bash
-git clone https://github.com/AlfieOfRoseHouse/portfolio
+git clone https://github.com/AlfieWPearce/portfolio
 cd portfolio
 open index.html
 ```
