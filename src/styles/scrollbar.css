@@ -1,0 +1,20 @@
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 10px;
+	opacity: 1;
+}
+::-webkit-scrollbar-track {
+	background: var(--dark);
+}
+::-webkit-scrollbar-thumb {
+	background: var(--light);
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--lighter);
+}
+::-webkit-scrollbar-button {
+	background: var(--light);
+}
+::-webkit-scrollbar-button:hover {
+	background: var(--lighter);
+}

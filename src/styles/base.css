@@ -1,0 +1,66 @@
+/* Variables */
+:root {
+	--dark: rgba(20, 20, 20, 220);
+	--darker: rgba(10, 10, 10, 220);
+	--light: rgba(200, 200, 200, 220);
+	--lighter: rgba(255, 255, 255, 220);
+	--accent: rgba(150, 180, 255, 220);
+	--accent-dark: rgba(110, 140, 215, 220);
+
+	--spacing: 3rem;
+	--max-width: 1000px;
+	--max-width-sections: 950px;
+
+	--rounding-radius: 8px;
+
+	--text-size-h1: 3.2rem;
+
+	--lefter: 1/7;
+	--left: 1/8;
+	--center: 1/13;
+	--right: 6/13;
+	--righter: 7/13;
+}
+
+/* Smooth Scrolling */
+html {
+	/* scroll-snap-type: y proximity; */
+	scroll-behavior: smooth;
+}
+
+/* Everything */
+body {
+	margin: 0;
+	font-family: system-ui, sans-serif;
+	color: var(--light);
+	background: linear-gradient(black, var(--darker));
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+/* Canvas */
+canvas {
+	position: fixed;
+	inset: 0;
+	z-index: -10;
+	pointer-events: none;
+}
+
+/* Links */
+a {
+	color: var(--accent);
+	text-decoration: none;
+	transition: 0.15s ease;
+}
+a:hover {
+	color: var(--accent-light);
+}
+
+/* Disclaimers */
+.disclaimer {
+	margin-top: 1.5rem;
+	padding: 1rem;
+	border-left: 3px solid #cc7a00;
+	font-size: 0.85rem;
+	text-align: justify;
+}

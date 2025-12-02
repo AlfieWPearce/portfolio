@@ -1,0 +1,45 @@
+/* Nav bar */
+.navbar {
+	position: fixed;
+	top: 0.5rem;
+	left: 0.5rem;
+	z-index: 10;
+
+	display: flex;
+	flex-direction: column;
+
+	gap: 0.5rem;
+
+	background: var(--dark);
+	opacity: 0.8;
+	backdrop-filter: blur(6px);
+
+	padding: 0.75rem 1rem;
+	border: 1px solid var(--light);
+	border-radius: 8px;
+	gap: 0.5rem;
+
+	font-size: 0.9rem;
+	transition: 0.3s ease;
+}
+.navbar:hover {
+	opacity: 1;
+}
+.navbar a {
+	color: var(--light);
+	text-decoration: none;
+	opacity: 0.8;
+	transition: 0.15s ease;
+}
+.navbar a:hover {
+	opacity: 1;
+	color: var(--lighter);
+	transform: translateX(2px);
+}
+/* Fade when scrolling */
+body.scrolling .navbar {
+	opacity: 0.5;
+}
+body:not(.scrolling) .navbar {
+	opacity: 0.8;
+}

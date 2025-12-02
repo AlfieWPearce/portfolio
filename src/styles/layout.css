@@ -1,0 +1,45 @@
+/* Main Container */
+main {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 4rem 2rem;
+
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	row-gap: var(--spacing);
+}
+
+/* Footer - Contact Section */
+footer {
+	padding: 2rem 1rem;
+	text-align: center;
+	background: var(--dark);
+	color: var(--light);
+	border-top: 1px solid var(--light);
+	margin-top: 6rem;
+}
+footer h2 {
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+}
+.contact-links {
+	margin: 1.5rem 0;
+	display: flex;
+	gap: 1.5rem;
+	justify-content: center;
+}
+.contact-links a {
+	color: var(--accent);
+	text-decoration: none;
+	opacity: 0.8;
+	transition: 0.2s ease;
+}
+.contact-links a:hover {
+	opacity: 1;
+	transform: translateY(-2px);
+}
+footer .copyright {
+	margin-top: 2rem;
+	font-size: 0.75rem;
+	opacity: 0.6;
+}
