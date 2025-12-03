@@ -1,5 +1,5 @@
 /* Universal Section Styling */
-section {
+.section {
 	/* scroll-snap-align: start; */
 	max-width: var(--max-width);
 
@@ -17,7 +17,7 @@ section {
 
 	opacity: 0.9;
 }
-section.light {
+.section.light {
 	background: var(--light);
 	color: var(--dark);
 	border-color: var(--dark);
@@ -37,6 +37,24 @@ section.light {
 .righter {
 	grid-column: var(--righter);
 	text-align: right;
+}
+
+/* Links */
+.project-link {
+	text-decoration: none;
+	color: inherit;
+}
+.project-link section {
+	transition: 0.25s ease;
+	cursor: pointer;
+}
+.project-link:hover section {
+	transform: scale(1.015);
+	opacity: 0.95;
+}
+.project-link:active section {
+	transform: scale(0.99);
+	opacity: 0.9;
 }
 
 /* Specific Section Styling */
@@ -60,6 +78,25 @@ section.light {
 	max-width: var(--max-width);
 	padding: 0.5rem 4rem;
 }
+/* /* Description hidden until hover *
+.project-title {
+	transition: 0.2s ease;
+	text-align: center;
+	top: 50%;
+	bottom: 50%;
+	font-size: 2rem;
+}
+.project-link:hover .project-title {
+	transform: translateY(-50%);
+	font-size: 1.5rem;
+}
+.project-description {
+	opacity: 0;
+	transition: 0.2s ease;
+}
+.project-link:hover .project-description {
+	opacity: 1;
+} */
 
 /* Work Section */
 .columns {
@@ -109,15 +146,58 @@ section.light {
 
 /* Quotes */
 .quote {
+	background: none;
+	border: none;
 	margin: 0rem auto;
 	padding: 1rem 1.2rem;
 	color: var(--light);
-	background: var(--dark);
+	/* background: var(--dark); */
 	font-size: 1rem;
 	font-style: italic;
 	opacity: 0.9;
-	width: 90%;
+	/* width: 90%; */
+	width: fit-content;
 }
 .quote p {
 	border-left: 3px solid var(--light);
+	border-bottom: 5px solid rgba(0, 0, 0, 0);
+	border-top: 5px solid rgba(0, 0, 0, 0);
+	margin: 0 auto;
+	padding: 0 7px;
+}
+
+/* Animate quotes */
+/* base state (before visible) */
+.quote {
+	opacity: 0;
+	transform: translateY(10px);
+	transition:
+		opacity 0.8s ease,
+		transform 0.8s ease;
+}
+/* inner line animation container */
+.quote p {
+	position: relative;
+	overflow: hidden;
+	padding-left: 1rem;
+}
+/* the line that animates */
+.quote p::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 0%;
+	width: 3px;
+	transform: translateY(-50%);
+	transition: height 0.6s ease;
+}
+/* when visible */
+.quote.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+.quote.visible p::before {
+	height: 100%;
+	width: 3px; /* reveals the line */
 }

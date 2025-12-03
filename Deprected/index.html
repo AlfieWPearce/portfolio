@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Alfie | Portfolio</title>
+    
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <script src="background.js"></script>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    
+    <!-- Background Music -->
+    <audio id="bgMusic" src="Galactic Gridlock.mp3" type="audio/mpeg" loop></audio>
+
+    <!-- Scripts for accessibility and theme switching -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const audio = document.getElementById("bgMusic");
+        const toggleThemeBtn = document.getElementById("toggleTheme");
+        const legacyToggle = document.getElementById("legacyToggle");
+        const legacyList = document.querySelector(".legacyList");
+
+        //Gets dark/light mode from local storage (useful for mobile)
+        const savedTheme = localStorage.getItem('theme');
+        document.documentElement.setAttribute("data-theme", savedTheme || 'dark');
+
+        // Start music after user interaction
+        ['click', 'touchstart'].forEach(event => {
+          window.addEventListener(event, () => audio.play().catch(() => {}),
+          { once: true });
+        });
+
+        // Set default theme
+        document.documentElement.setAttribute("data-theme", "dark");
+
+        // Toggle the theme (light/dark)
+        toggleThemeBtn.addEventListener("click", () => {
+          const currentTheme = document.documentElement.getAttribute("data-theme");
+          const newTheme = currentTheme === "light" ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", newTheme);
+          localStorage.setItem("theme", newTheme);
+        });
+
+        // Toggle the visibility of archived projects        
+        legacyToggle.addEventListener("click", () => {
+          legacyList.classList.toggle("hidden");
+          legacyToggle.classList.toggle("active");
+          legacyToggle.innerHTML = legacyList.classList.contains("hidden")
+            ? "Old Projects ▼"
+            : "Old Projects ▲";
+        });
+
+        function updateClock() { //Recursive function repeating every exact second
+          const now = new Date(Date.now());
+          document.getElementById('clock').textContent = now.toLocaleTimeString('en-GB', { hour12: false });
+        
+          // Calculate milliseconds until the *next* second boundary
+          const delay = 1000 - (now.getMilliseconds());
+          setTimeout(updateClock, delay);
+        }
+        
+        // Kicks the clock update off
+        updateClock();
+      });
+    </script>
+  </head>
+  
+  <body>
+    <div id="buttonContainer">
+      <button id="toggleBackground" aria-label="Toggle background effect">Toggle Background!</button>
+      <button id="toggleTheme" aria-label="Toggle between light and dark theme">Light | Dark</button>
+    </div>
+
+    <div class="container">
+      <div class="header">
+        <h1>Alfie Pearce</h1>
+        <div class="subtitle-wrapper">
+          <div class="subtitle-line"></div>
+          <div class="subtitle-container">
+            <div class="subtitle-item">
+              <span>Intelligence Aspirant</span>
+              <div class="tooltip">
+                Researching OSINT, adversarial threats, and critical thinking techniques for modern intelligence work.
+              </div>
+            </div>
+            <span class="divider">|</span>
+            <div class="subtitle-item">
+              <span>Multilingual</span>
+              <div class="tooltip">
+                Deutsch: „Sprachen verbinden Welten“<br />
+                Русский: «Я изучаю языки, чтобы лучше понимать людей и культуру.»<br />
+                English (native), German (~B1)<br />
+                Programming: HTML, CSS, JS, Python, Lua, Linux
+              </div>
+            </div>
+            <span class="divider">|</span>
+            <div class="subtitle-item">
+              <span>Analytical Thinker</span>
+              <div class="tooltip">
+                From puzzle mechanics in game design to structured research workflows, I always think in layers.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="body">
+        <section>
+          <h2>Main Projects</h2>
+          <ul class="projectList">
+            <li>
+              <div class="project-title">
+                <a href="https://github.com/AlfieOfRoseHouse/Bridge/" target="_blank" aria-label="View Bridge project">Bridge (CS Coursework)</a>
+                <span class="badge red">HTML|CSS|JS</span>
+                <span class="badge green">Game</span>
+                <span class="badge gold">Level 2</span>
+              </div>
+              <div class="project-description">An implementation of the gameplay of Contract Bridge (the card game).</div>
+            </li>
+            <li>
+              <div class="project-title">
+                <a href="https://github.com/AlfieOfRoseHouse/Solar-System/" target="_blank" aria-label="View Solar System Simulator project">Solar System Simulator (WiP)</a>
+                <span class="badge red">JS</span>
+                <span class="badge green">Physics</span>
+                <span class="badge gold">Level 3</span>
+              </div>
+              <div class="project-description">A gravitational simulation with orbital mechanics, custom trails, and scalable rendering.</div>
+            </li>
+          </ul>
+        </section>
+        <section aria-labelledby="recent-projects">
+          <h2 id="recent-projects">Recent Projects</h2>
+          <ul class="projectList">
+            <li>
+              <div class="project-title">
+                <a href="https://github.com/AlfieOfRoseHouse/GhostInkInspector/" target="_blank" aria-label="View Ghost Ink Inspector project">GhostInk Inspector</a>
+                <span class="badge red">HTML|CSS|JS</span>
+                <span class="badge green">Utility</span>
+                <span class="badge gold">Level 2</span>
+              </div>
+              <div class="project-description">Shows hidden Unicode characters and allows you to copy a clean version of your text.</div>
+            </li>
+            <li>
+              <div class="project-title">
+                <a href="https://github.com/AlfieOfRoseHouse/RegexTester/" target="_blank" aria-label="View Regex Tester project">Regex Tester</a>
+                <span class="badge red">HTML|CSS|JS</span>
+                <span class="badge green">Utility</span>
+                <span class="badge gold">Level 1</span>
+              </div>
+              <div class="project-description">Test Regex Patterns and keys on your input text.</div>
+            </li>
+            <li>
+              <div class="project-title">
+                <a href="https://github.com/AlfieOfRoseHouse/EmailHarvester" target="_blank" aria-label="View Email Harvester project">Email Harvester</a>
+                <span class="badge red">Python</span>
+                <span class="badge green">OSINT</span>
+                <span class="badge gold">Level 1</span>
+              </div>
+              <div class="project-description">Harvests email addresses from public sources for OSINT purposes.</div>
+            </li>
+            <li>
+              <div class="project-title">
+                <a href="https://github.com/AlfieOfRoseHouse/DraughtsGame/" target="_blank" aria-label="View Draughts Game project">Draughts Game</a>
+                <span class="badge red">HTML|CSS|JS</span>
+                <span class="badge green">Game</span>
+                <span class="badge gold">Level 2</span>
+              </div>
+              <div class="project-description">A browser-based draughts game built using HTML, CSS, and JavaScript.</div>
+            </li>
+            <li>
+              <div class="project-title">
+                <a href="https://github.com/AlfieOfRoseHouse/DeadWood/" target="_blank" aria-label="View Deadwood project">Deadwood</a>
+                <span class="badge red">HTML|CSS|JS</span>
+                <span class="badge green">Game</span>
+                <span class="badge gold">Level 1</span>
+              </div>
+              <div class="project-description">A browser-based text-adventure puzzle-based game built using HTML, CSS, and JavaScript.</div>
+            </li>
+          </ul>
+        </section>
+    
+        <section aria-labelledby="old-projects">
+          <h2 id="legacyToggle" class="collapsible">Old Projects ▼</h2>
+          <div class="legacyList hidden">
+            <p id="legacyDescription">Games and utilities made by me a long time ago (in Scratch, I couldn't gain access to many others)</p>
+            <ul class="legacyList">
+              <li>
+                <div class="project-title">
+                  <a href="https://scratch.mit.edu/projects/944660567/" target="_blank">Asteroid Hunter</a>
+                  <span class="badge red">Scratch</span>
+                  <span class="badge green">Game</span>
+                  <span class="badge gold">Level 1</span>
+                </div>
+                <div class="project-description">A Scratch arcade-style game where you have to destroy the asteroids to survive</div>
+              </li>
+              <li>
+                <div class="project-title">
+                  <a href="https://scratch.mit.edu/projects/941116230/" target="_blank">3D Raycaster</a>
+                  <span class="badge red">Scratch</span>
+                  <span class="badge green">Test</span>
+                  <span class="badge gold">Level 2</span>
+                </div>
+                <div class="project-description">A Scratch 3D raycaster - very low FPS, terrible idea, but it works. Inspired by games like Moon, Doom and Wolfenstein</div>
+              </li>
+              <li>
+                <div class="project-title">
+                  <a href="https://scratch.mit.edu/projects/946226429/" target="_blank">Firework Simulator</a>
+                  <span class="badge red">Scratch</span>
+                  <span class="badge green">Simulator</span>
+                  <span class="badge gold">Level 1</span>
+                </div>
+                <div class="project-description">A Scratch particle simulator made to imitate a firework display</div>
+              </li>
+              <li>
+                <div class="project-title">
+                  <a href="https://scratch.mit.edu/projects/951780397/" target="_blank">Maze Generator</a>
+                  <span class="badge red">Scratch</span>
+                  <span class="badge green">Test</span>
+                  <span class="badge gold">Level 2</span>
+                </div>
+                <div class="project-description">A Scratch maze generator that generates a maze (ignoring a blacklisted shape) that you have to get to the end of</div>
+              </li>
+            </ul>
+          </div>
+        </section>
+    
+        <section aria-labelledby="on-the-radar">
+          <h2 id="on-the-radar">On the Radar</h2>
+          <ul class="todo-list">
+            <li>Web-based Intelligence Dashboard</li>
+            <li>Hash Cracker Utility</li>
+            <li>Threat Visualiser (leaflet.js)</li>
+          </ul>
+        </section>
+      </div>
+
+      <footer>
+        <p>
+          Encrypted & Decrypted by Alfie Pearce | <a href="mailto:alfiewpearce@gmail.com" aria-label="Send email to Alfie">Contact</a>
+        </p>
+      </footer>
+    </div>
+
+    <div class="floating-widget live-clock" id="clock">00:00:00</div>
+  </body>
+</html>
