@@ -44,7 +44,7 @@ portfolio/
 
 ## Development && How to Use
 
-[Click Here!](https://AlfieWPearce.github.io/Portfolio/)
+[Click Here!](https://alfiewpearce.github.io/portfolio/)
 
 - Or you can clone and run locally:
 
