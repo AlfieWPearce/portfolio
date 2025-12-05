@@ -1,13 +1,17 @@
 'use strict';
 
 const data = {
+	boidsEnabed: true, // Show Boids by default
 	'bird-count': null, // Number of birds in the flock
 	'bird-density': 0.00022, // Density of birds per pixel
 	debug: false, //Show debug info
+	targetFPS: 30, // Locks FPS at this number to protect the machine
+	minFPSThreshold: 25, // Turns off Boids below this fps
+	maxFPSThreshold: 40, // Turns on Boids above this fps
 	bird: {
 		// Visual & Movement Parameters
-		size1: 22, // Length of 'nose' of bird
-		size2: 10, // Width of 'tail' of bird
+		size1: 26, // Length of 'nose' of bird
+		size2: 9, // Width of 'tail' of bird
 		moveSpeed: 0.1, // Base forward speed
 		moveSpeedVariety: 0.03, // Variation in forward speed
 		rotationSpeed: 0.0012, // How quickly a bird can turn

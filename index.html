@@ -8,9 +8,9 @@
 
 		<link rel="stylesheet" href="src/styles.css" />
 
-		<script type="module" src="src/main.js"></script>
+		<script defer src="src/main.js"></script>
 
-		<script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/2.0.5/p5.min.js"></script>
 		<script defer src="src/background/data.js"></script>
 		<script defer src="src/background/bird.js"></script>
 		<script defer src="src/background/script.js"></script>
@@ -25,6 +25,9 @@
 			<a href="#work">Work</a>
 			<a href="#contact">Contact</a>
 		</nav>
+		<div id="background-toggle-container">
+			<button id="toggle-background">Toggle Background</button>
+		</div>
 
 		<main>
 			<section class="section hero">
@@ -97,19 +100,19 @@
 			<section class="section projects title">
 				<h2>Recent Projects</h2>
 			</section>
-			<a 
-				href="https://github.com/AlfieWPearce/Boids/" 
+			<a
+				href="https://github.com/AlfieWPearce/Boids/"
 				class="section project-link projects lefter"
 			>
-				<section>
+				<section id="boids">
 					<h2 class="project-title">Boids</h2>
 					<p class="project-description">
 						An experiment with the idea of Boids<br />
-						Boids is a simple simulation that models the movement
-						of birds in a flock, but can be used for many things,
-						including and not limited to UAVs and UGVs.<br />
-						This will likely become the background of the portfolio
-						temporarily
+						Boids is a simple simulation that models the
+						movement of birds in a flock, but can be used for
+						many things, including and not limited to MAVs and
+						UGVs.<br />
+						A port of this is the background that you see now.
 					</p>
 				</section>
 			</a>
@@ -156,8 +159,8 @@
 						secure web practices.
 					</p>
 					<p class="project-description disclaimer">
-						DISCLAIMER: This is an educational tool used only for
-						educational purposes
+						DISCLAIMER: This is an educational tool used only
+						for educational purposes
 					</p>
 				</section>
 			</a>
@@ -182,7 +185,8 @@
 					<h2 class="project-title">Deadwood</h2>
 					<p class="project-description">
 						A narrative puzzle-based game, where the player must
-						repair a broken car to escape a quiet, eerie woodland
+						repair a broken car to escape a quiet, eerie
+						woodland
 						<br />
 						An early exploration of branching dialogue,
 						inventory systems, and environmental storytelling.

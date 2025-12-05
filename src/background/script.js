@@ -12,12 +12,52 @@ function setup() {
 }
 
 const createBirds = (n) => {
+	birds = [];
 	for (let i = 0; i < n; i++) birds.push(new Bird());
 };
 const updateBirds = (birds, dt) => birds.forEach((b) => b.update(dt));
 const drawBirds = (birds) => birds.forEach((b, idx) => drawBird(b, idx));
 
+function windowResized() {
+	resizeCanvas(windowWidth, windowHeight);
+	background(0);
+	if (data['bird-density'] != null)
+		data['bird-count'] = floor(data['bird-density'] * width * height);
+	createBirds(data['bird-count']);
+}
+
+let lastFrameTime = 0;
+let smoothedFps = 0;
+const frameDuration = 1000 / data.targetFPS;
+
+let enabled = true;
+document.getElementById('toggle-background').addEventListener('click', () => {
+	console.log('click');
+	enabled = !enabled;
+	data.boidsEnabed = !data.boidsEnabed;
+	if (!data.boidsEnabed) {
+		background(0, 20);
+	}
+});
+
 function draw() {
+	const now = performance.now();
+
+	smoothedFps = lerp(smoothedFps, frameRate(), 0.1);
+	if (enabled && data.boidsEnabed && smoothedFps < data.minFPSThreshold) {
+		data.boidsEnabed = false;
+		console.warn('🔻 Boiids paused due to low fps');
+	} else if (enabled && !data.boidsEnabed && smoothedFps > data.maxFPSThreshold) {
+		data.boidsEnabed = true;
+		console.log('🔺 Boiids resumed (fps recovered)');
+	}
+	if (!data.boidsEnabed) {
+		background(0, 20);
+		return;
+	}
+	if (now - lastFrameTime < frameDuration) return;
+	lastFrameTime = now;
+
 	updateBirds(birds, deltaTime);
 
 	// clear();
@@ -36,7 +76,7 @@ function drawBird(bird, idx) {
 
 	//Bird body - simple triangle
 
-	let hue = 0;
+	let hue, d, fade;
 	//Change colour
 	switch (data.visual.colourScheme) {
 		case 'time':
@@ -48,17 +88,20 @@ function drawBird(bird, idx) {
 			fill(color(`hsl(${hue}, 80%, 80%)`));
 			break;
 		case 'distance':
-			const d = dist(bird.pos[0], bird.pos[1], width / 2, height / 2);
-			const fade = map(d, 0, max(width / 2, height / 2), 255, 80);
+			d = dist(bird.pos[0], bird.pos[1], width / 2, height / 2);
+			fade = map(d, 0, max(width / 2, height / 2), 255, 80);
 			fill(200, 200, 255, fade);
 			break;
 		case 'aurora':
 			//Map y position to hue (green - teal - violet)
-			const y = bird.pos[1] / height; // 0..1
-			hue = lerp(120, 270, y);
+			const y = isNaN(bird.pos[1] / height) ? height / 2 : bird.pos[1] / height; // 0..1
+			const scrollShift = scrollFactor * 180;
+			hue = lerp(120, 270, y) + scrollShift;
 			const speed = isNaN(bird.speed) ? 0.1 : bird.speed;
-			const bright = floor(map(speed, 0, 0.5, 65, 85, true));
-			fill(color(`hsl(${hue}, 70%, ${bright}%)`));
+			const bright = floor(map(speed, 0, 0.2, 65, 85, true));
+			d = dist(bird.pos[0], bird.pos[1], width / 2, height / 2);
+			fade = map(d, 0, max(width / 2, height / 2), 100, 50);
+			fill(color(`hsl(${hue % 360}, 70%, ${fade}%)`));
 			break;
 		default:
 			fill(200, 0, 0);

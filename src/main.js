@@ -1,10 +1,14 @@
 let scrollTimer;
+let scrollFactor = 0;
 window.addEventListener('scroll', () => {
 	document.body.classList.add('scrolling');
 	clearTimeout(scrollTimer);
 	scrollTimer = setTimeout(() => {
 		document.body.classList.remove('scrolling');
 	}, 200);
+
+	const maxScroll = document.body.scrollHeight - window.innerHeight;
+	scrollFactor = window.scrollY / maxScroll;
 });
 
 // Quote reveal animation

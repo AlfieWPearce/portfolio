@@ -1,7 +1,7 @@
 /* Nav bar */
 .navbar {
 	position: fixed;
-	top: 0.5rem;
+	top: 3rem;
 	left: 0.5rem;
 	z-index: 10;
 
@@ -17,7 +17,6 @@
 	padding: 0.75rem 1rem;
 	border: 1px solid var(--light);
 	border-radius: 8px;
-	gap: 0.5rem;
 
 	font-size: 0.9rem;
 	transition: 0.3s ease;
@@ -42,4 +41,38 @@ body.scrolling .navbar {
 }
 body:not(.scrolling) .navbar {
 	opacity: 0.8;
+}
+
+/* Toggle background button */
+#background-toggle-container {
+	position: fixed;
+	top: 0.5rem;
+	left: 0.5rem;
+	z-index: 10;
+
+	opacity: 0.9;
+
+	background: var(--dark);
+	backdrop-filter: blur(6px);
+
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--light);
+	border-radius: 8px;
+
+	transition: 0.3s ease;
+	cursor: pointer;
+}
+#toggle-background {
+	border: none;
+	background: none;
+	margin: none;
+	padding: none;
+	color: var(--light);
+	text-align: center;
+	font-size: 0.9rem;
+	cursor: pointer;
+}
+#background-toggle-container:hover {
+	transform: scale(1.05);
+	background: var(--darker);
 }

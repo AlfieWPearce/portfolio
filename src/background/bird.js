@@ -10,8 +10,8 @@ class Bird {
 		this.targetAngle = null;
 	}
 	update(dt) {
-		rotateBird(this, data.bird.rotationSpeed * dt);
-		moveBird(this, this.speed * dt);
+		rotateBird(this, data.bird.rotationSpeed * 30 /* * dt*/);
+		moveBird(this, this.speed * 30 /** dt*/);
 	}
 }
 
