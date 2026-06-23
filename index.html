@@ -1,386 +1,357 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Alfie Pearce</title>
-		<link rel="icon" href="gfx/favicon.ico" />
 
-		<link rel="stylesheet" href="src/styles.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alfie Pearce</title>
+  <link rel="icon" href="gfx/favicon.ico" />
 
-		<script defer src="src/main.js"></script>
+  <link rel="stylesheet" href="src/styles.css" />
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/2.0.5/p5.min.js"></script>
-		<script defer src="src/background/data.js"></script>
-		<script defer src="src/background/bird.js"></script>
-		<script defer src="src/background/script.js"></script>
-	</head>
-	<body id="top">
-		<!-- <canvas id="background"></canvas> -->
+  <script defer src="src/main.js"></script>
 
-		<nav class="navbar">
-			<a href="#top">Home</a>
-			<a href="#manifesto">Manifesto</a>
-			<a href="#projects">Projects</a>
-			<a href="#skills">Skills</a>
-			<a href="#work">Work</a>
-			<a href="#contact">Contact</a>
-		</nav>
-		<div id="background-toggle-container">
-			<button id="toggle-background">Toggle Background</button>
-		</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/2.0.5/p5.min.js"></script>
+  <script defer src="src/background/data.js"></script>
+  <script defer src="src/background/bird.js"></script>
+  <script defer src="src/background/script.js"></script>
+</head>
 
-		<main>
-			<section class="section hero">
-				<h1>Alfie Pearce</h1>
-				<p>Developer • Designer • Tinkerer</p>
-			</section>
+<body id="top">
+  <!-- <canvas id="background"></canvas> -->
 
-			<section class="section quote">
-				<p>
-					The future is clever, but the past is wise - I try to borrow
-					from both.
-				</p>
-			</section>
+  <nav class="navbar">
+    <a href="#top">Home</a>
+    <a href="#manifesto">Manifesto</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div id="background-toggle-container">
+    <button id="toggle-background">Toggle Background</button>
+  </div>
 
-			<section id="manifesto" class="section manifesto light">
-				<h2>Manifesto</h2>
-				<p>
-					I build with intent in a world addicted to haste.<br />
-					I question loudly; I create boldly; I honour the craft that
-					came before me. <br />
-					Innovation is my mischief; purpose keeps me graced.<br />
-					What I make, I make to last.
-				</p>
-			</section>
+  <main>
+    <section class="section hero">
+      <h1>Alfie Pearce</h1>
+      <p>Developer • Designer • Tinkerer</p>
+    </section>
 
-			<section id="projects" class="section projects title">
-				<h2>Main Projects</h2>
-			</section>
-			<a
-				href="https://github.com/AlfieWPearce/Solar-System/"
-				class="section project-link projects left"
-			>
-				<section>
-					<h2 class="project-title">Solar System</h2>
-					<p class="project-description">
-						A real-time orbital model built with Three.js,
-						simulating gravitation mechanics using Newtonian
-						physics.<br />
-						I designed the experience to feel tactile and
-						explanatory - planets drifting, shadows shifting,
-						and moting responding subtly to user input. The
-						project taught me how to blend science, maths, and
-						visual storytelling into an interactive
-						environemt.<br />
-						This is a passion project of mine, and as such, will
-						be constantly evolving.
-					</p>
-				</section>
-			</a>
-			<a
-				href="https://github.com/AlfieWPearce/Bridge/"
-				class="section project-link projects right light"
-			>
-				<section>
-					<h2 class="project-title">Bridge</h2>
-					<p class="project-description">
-						A full digital version of the card game Bridge,
-						built from scratch - complete with auction logic,
-						scoring rules, and animated card mechanics.<br />
-						The project pushed me into deeper algorithmic
-						thinking and state management, as well as clean UI
-						design inspired by physical playing cards.<br />
-						This is my Computer Science Coursework - and as
-						such, the code will not be available until August
-						2026.
-					</p>
-				</section>
-			</a>
-			<a
-				href="https://github.com/AlfieWPearce/cli_mini-projects/tree/stable"
-				class="section project-link projects"
-			>
-				<section>
-					<h2 class="project-title">CLI Mini-Projects: tools for
-						thought and work</h2>
-					<p class="project-description">
-						A collection of small, cli-focused tools built to explore
-						core software design principles: simplicity, composability,
-						and long-term maintainability.<br />
-						The project deliberately avoids frameworks, databases, and
-						heavy abstractions, instead relying on plain text, standard
-						libraries, and Unix-style workflows.
-					</p>
-				</section>
-			</a>
-			<section class="section projects title">
-				<h2>Recent Projects</h2>
-			</section>
-			<a
-				href="https://github.com/AlfieWPearce/TinyRacer"
-				class="section project-link projects left light"
-			>
-				<section>
-					<h2 class="project-title">Tiny Racer</h2>
-					<p class="project-description">
-						An arcade-style top-down racing game. I focused on the
-						feel of the car racing mechanics.<br />
-						What will be your best times?
-					</p>
-				</section>
-			</a>
-			<a
-				href="https://github.com/AlfieWPearce/Boids/"
-				class="section project-link projects lefter"
-			>
-				<section id="boids">
-					<h2 class="project-title">Boids</h2>
-					<p class="project-description">
-						An experiment with the idea of Boids<br />
-						Boids is a simple simulation that models the
-						movement of birds in a flock, but can be used for
-						many things, including and not limited to MAVs and
-						UGVs.<br />
-						A port of this is the background that you see now.
-					</p>
-				</section>
-			</a>
-			<a
-				href="https://github.com/AlfieWPearce/GhostInkInspector/"
-				class="section project-link projects"
-			>
-				<section>
-					<h2 class="project-title">Ghost Ink Inspector</h2>
-					<p class="project-description">
-						A small experiment that shows hidden Unicode
-						characters (often found in AI responses) and allows
-						you to copy a cleaned version of your text.
-					</p>
-				</section>
-			</a>
-			<a
-				href="https://github.com/AlfieWPearce/RegexTester/"
-				class="section project-link projects lefter"
-			>
-				<section>
-					<h2 class="project-title">Regex Tester</h2>
-					<p class="project-description">
-						A fast, lightweight regular-expression playground
-						for testing patterns live.<br />
-						My goal was clarity: instant feedback, clean
-						visuals, and no distractions - something that I
-						wanted, while learning regex myself.
-					</p>
-				</section>
-			</a>
-			<a
-				href="https://github.com/AlfieWPearce/EmailHarvester/"
-				class="section project-link projects righter"
-			>
-				<section>
-					<h2 class="project-title">Email Harvester</h2>
-					<p class="project-description">
-						A demonstration tool showing how web-scraping
-						algorithms work (and can gather OSINT) - built
-						purely for learning and teaching cybersecurity and
-						OSINT principles.<br />
-						It reinforced the importance of ethical coding and
-						secure web practices.
-					</p>
-					<p class="project-description disclaimer">
-						DISCLAIMER: This is an educational tool used only
-						for educational purposes
-					</p>
-				</section>
-			</a>
-			<a
-				href="https://github.com/AlfieWPearce/DraughtsGame/"
-				class="section project-link projects right light"
-			>
-				<section>
-					<h2 class="project-title">Draughts</h2>
-					<p class="project-description">
-						A straightforward implementation of the classic
-						board game (aka Checkers in the USA), focusing on
-						smooth gameplay, clean logic, and simple animations.
-					</p>
-				</section>
-			</a>
-			<a
-				href="https://github.com/AlfieWPearce/DeadWood/"
-				class="section project-link projects left"
-			>
-				<section>
-					<h2 class="project-title">Deadwood</h2>
-					<p class="project-description">
-						A narrative puzzle-based game, where the player must
-						repair a broken car to escape a quiet, eerie
-						woodland
-						<br />
-						An early exploration of branching dialogue,
-						inventory systems, and environmental storytelling.
-						<br />
-						Made for a college project with a friend (Amelia
-						Botnari) and achieved 2nd place!
-					</p>
-				</section>
-			</a>
+    <section class="section quote">
+      <p>
+        The future is clever, but the past is wise - I try to borrow
+        from both.
+      </p>
+    </section>
 
-			<section class="section quote">
-				<p>Every line of code is a whisper to the future.</p>
-			</section>
+    <section id="manifesto" class="section manifesto light">
+      <h2>Manifesto</h2>
+      <p>
+        I build with intent in a world addicted to haste.<br />
+        I question loudly; I create boldly; I honour the craft that
+        came before me. <br />
+        Innovation is my mischief; purpose keeps me graced.<br />
+        What I make, I make to last.
+      </p>
+    </section>
 
-			<section class="section projects title">
-				<h2>Old Projects</h2>
-				<p>
-					Games and utilities made by me a long time ago, when I was
-					11 or younger as a rule (in Scratch, I couldn't gain access
-					to many others)<br />
-					The dates are weird - some of these I had to port or edit
-					for them to be useable.
-				</p>
-			</section>
-			<a
-				href="https://scratch.mit.edu/projects/944660567/"
-				class="section project-link projects"
-			>
-				<section>
-					<h2 class="project-title">Asteroid Shooter</h2>
-					<p class="project-description">
-						An arcade-style shooter created when I was very
-						young - chaotic, colourful, and full of energy.<br />
-						You control a space-ship that has to destroy
-						asteroids and survive. How long can you live?
-					</p>
-				</section>
-			</a>
-			<a
-				href="https://scratch.mit.edu/projects/941116230/"
-				class="section project-link projects lefter"
-			>
-				<section>
-					<h2 class="project-title">3D Raycaster</h2>
-					<p class="project-description">
-						My first experiment with 3D rendering concepts - a
-						simple Doom-like engine using raycasting
-						techniques.<br />
-						Writing it taught me that "fake 3D" can be far more
-						clever that it looks.<br />
-						This was inspired by games like Doom, Moon, and
-						Wolfenstein.
-					</p>
-				</section>
-			</a>
-			<a
-				href="https://scratch.mit.edu/projects/951780397/"
-				class="section project-link projects righter"
-			>
-				<section>
-					<h2 class="project-title">Maze Generator</h2>
-					<p class="project-description">
-						An implementation of recursive backtracking to
-						generate perfect mazes - a small project with a
-						surprising sense of life as the passageways carve
-						themselves into existence.<br />
-						There is also the choice to set a blacklisted object
-						for the maze to not be generated in.
-					</p>
-				</section>
-			</a>
-			<a
-				href="https://scratch.mit.edu/projects/946226429/"
-				class="section project-link projects"
-			>
-				<section>
-					<h2 class="project-title">Firework Simulator</h2>
-					<p class="project-description">
-						My first attempt at a simple particle simulator. It
-						imitates a firework display and creates sound as
-						well as visuals.
-					</p>
-				</section>
-			</a>
+    <section id="projects" class="section projects title">
+      <h2>Main Projects</h2>
+    </section>
+    <a href="https://github.com/AlfieWPearce/Solar-System/" class="section project-link projects left">
+      <section>
+        <h2 class="project-title">Solar System</h2>
+        <p class="project-description">
+          A real-time orbital model built with Three.js,
+          simulating gravitation mechanics using Newtonian
+          physics.<br />
+          I designed the experience to feel tactile and
+          explanatory - planets drifting, shadows shifting,
+          and moting responding subtly to user input. The
+          project taught me how to blend science, maths, and
+          visual storytelling into an interactive
+          environemt.<br />
+          This is a passion project of mine, and as such, will
+          be constantly evolving.
+        </p>
+      </section>
+    </a>
+    <a href="https://github.com/AlfieWPearce/Bridge/" class="section project-link projects right light">
+      <section>
+        <h2 class="project-title">Bridge</h2>
+        <p class="project-description">
+          A full digital version of the card game Bridge,
+          built from scratch - complete with auction logic,
+          scoring rules, and animated card mechanics.<br />
+          The project pushed me into deeper algorithmic
+          thinking and state management, as well as clean UI
+          design inspired by physical playing cards.<br />
+          This is my Computer Science Coursework - and as
+          such, the code will not be available until August
+          2026.
+        </p>
+      </section>
+    </a>
+    <a href="https://github.com/AlfieWPearce/cli_mini-projects/tree/stable" class="section project-link projects">
+      <section>
+        <h2 class="project-title">CLI Mini-Projects: tools for
+          thought and work</h2>
+        <p class="project-description">
+          A collection of small, cli-focused tools built to explore
+          core software design principles: simplicity, composability,
+          and long-term maintainability.<br />
+          The project deliberately avoids frameworks, databases, and
+          heavy abstractions, instead relying on plain text, standard
+          libraries, and Unix-style workflows.
+        </p>
+      </section>
+    </a>
+    <section class="section projects title">
+      <h2>Recent Projects</h2>
+    </section>
+    <a href="https://github.com/AlfieWPearce/Particle-Simulator" class="section project-link projects">
+      <section>
+        <div class="project-body left">
+          <div class="project-text">
+            <h2 class="project-title">Fluid Simulator</h2>
+            <p class="project-description">
+              A simple SPH insprired Fluid Simulator created in c++.
+            </p>
+          </div>
+          <video class="project-video left" autoplay muted loop playsinline>
+            <source src="gfx/ParticleSimulationFullRecording.mp4" type="video/mp4">
+          </video>
+        </div>
+      </section>
+    </a>
+    <a href="https://github.com/AlfieWPearce/TinyRacer" class="section project-link projects left light">
+      <section>
+        <h2 class="project-title">Tiny Racer</h2>
+        <p class="project-description">
+          An arcade-style top-down racing game. I focused on the
+          feel of the car racing mechanics.<br />
+          What will be your best times?
+        </p>
+      </section>
+    </a>
+    <a href="https://github.com/AlfieWPearce/Boids/" class="section project-link projects lefter">
+      <section id="boids">
+        <h2 class="project-title">Boids</h2>
+        <p class="project-description">
+          An experiment with the idea of Boids<br />
+          Boids is a simple simulation that models the
+          movement of birds in a flock, but can be used for
+          many things, including and not limited to MAVs and
+          UGVs.<br />
+          A port of this is the background that you see now.
+        </p>
+      </section>
+    </a>
+    <a href="https://github.com/AlfieWPearce/GhostInkInspector/" class="section project-link projects">
+      <section>
+        <h2 class="project-title">Ghost Ink Inspector</h2>
+        <p class="project-description">
+          A small experiment that shows hidden Unicode
+          characters (often found in AI responses) and allows
+          you to copy a cleaned version of your text.
+        </p>
+      </section>
+    </a>
+    <a href="https://github.com/AlfieWPearce/RegexTester/" class="section project-link projects lefter">
+      <section>
+        <h2 class="project-title">Regex Tester</h2>
+        <p class="project-description">
+          A fast, lightweight regular-expression playground
+          for testing patterns live.<br />
+          My goal was clarity: instant feedback, clean
+          visuals, and no distractions - something that I
+          wanted, while learning regex myself.
+        </p>
+      </section>
+    </a>
+    <a href="https://github.com/AlfieWPearce/EmailHarvester/" class="section project-link projects righter">
+      <section>
+        <h2 class="project-title">Email Harvester</h2>
+        <p class="project-description">
+          A demonstration tool showing how web-scraping
+          algorithms work (and can gather OSINT) - built
+          purely for learning and teaching cybersecurity and
+          OSINT principles.<br />
+          It reinforced the importance of ethical coding and
+          secure web practices.
+        </p>
+        <p class="project-description disclaimer">
+          DISCLAIMER: This is an educational tool used only
+          for educational purposes
+        </p>
+      </section>
+    </a>
+    <a href="https://github.com/AlfieWPearce/DraughtsGame/" class="section project-link projects right light">
+      <section>
+        <h2 class="project-title">Draughts</h2>
+        <p class="project-description">
+          A straightforward implementation of the classic
+          board game (aka Checkers in the USA), focusing on
+          smooth gameplay, clean logic, and simple animations.
+        </p>
+      </section>
+    </a>
+    <a href="https://github.com/AlfieWPearce/DeadWood/" class="section project-link projects left">
+      <section>
+        <h2 class="project-title">Deadwood</h2>
+        <p class="project-description">
+          A narrative puzzle-based game, where the player must
+          repair a broken car to escape a quiet, eerie
+          woodland
+          <br />
+          An early exploration of branching dialogue,
+          inventory systems, and environmental storytelling.
+          <br />
+          Made for a college project with a friend (Amelia
+          Botnari) and achieved 2nd place!
+        </p>
+      </section>
+    </a>
 
-			<section id="skills" class="section skills">
-				<h2>Skills</h2>
-				<p align="center">
-					<a href="https://skillicons.dev">
-						<img src="https://skillicons.dev/icons?i=git,github,linux,windows,blender,cs,css,html,js,p5js,npm,lua,py,sqlite,vscode&perline=5" />
-					</a>
-				</p>
-			</section>
+    <section class="section quote">
+      <p>Every line of code is a whisper to the future.</p>
+    </section>
 
-			<section id="work" class="section work light">
-				<h2>Work Experience</h2>
-				<ul class="columns">
-					<li class="column">
-						<h3>HEALTH UNLIDDED - Volunteer Data Scientist</h3>
-						<p>
-							I researched and analysed healthcare data to
-							support healthcare, transforming raw numbers
-							into stories that mattered. My work
-							contributed to two published reports:
-						</p>
-						<div class="report-links">
-							<a
-								href="https://www.healthunlidded.org.uk/our-reports/mental-health-access-disparities"
-								class="report"
-								>Mental Health Access Disparities</a
-							>
-							<a
-								href="https://www.healthunlidded.org.uk/our-reports/covids-affect-on-cancer-screenings"
-								class="report"
-								>Missed Appointments, Missed
-								Lives</a
-							>
-						</div>
-						<p>
-							The role sharpened my analytical abilities
-							and showed me the power of clear
-							communication in shaping real-world
-							decisions.
-						</p>
-					</li>
-					<hr class="divider" />
-					<li class="column right">
-						<h3>
-							THE EXCHANGE, Tiptree - Work Experience
-							Placement
-						</h3>
-						<p>
-							A crash course in real responsibility: I
-							prepared food and drinks, served customers,
-							and handled transactions with accuracy
-							during busy hours.<br />
-							I also supported the office with financial
-							and administrative tasks, gaining hands-on
-							experience with Microsoft Excel and the
-							wider 365 Suite.
-						</p>
-					</li>
-				</ul>
-			</section>
+    <section class="section projects title">
+      <h2>Old Projects</h2>
+      <p>
+        Games and utilities made by me a long time ago, when I was
+        11 or younger as a rule (in Scratch, I couldn't gain access
+        to many others)<br />
+        The dates are weird - some of these I had to port or edit
+        for them to be useable.
+      </p>
+    </section>
+    <a href="https://scratch.mit.edu/projects/944660567/" class="section project-link projects">
+      <section>
+        <h2 class="project-title">Asteroid Shooter</h2>
+        <p class="project-description">
+          An arcade-style shooter created when I was very
+          young - chaotic, colourful, and full of energy.<br />
+          You control a space-ship that has to destroy
+          asteroids and survive. How long can you live?
+        </p>
+      </section>
+    </a>
+    <a href="https://scratch.mit.edu/projects/941116230/" class="section project-link projects lefter">
+      <section>
+        <h2 class="project-title">3D Raycaster</h2>
+        <p class="project-description">
+          My first experiment with 3D rendering concepts - a
+          simple Doom-like engine using raycasting
+          techniques.<br />
+          Writing it taught me that "fake 3D" can be far more
+          clever that it looks.<br />
+          This was inspired by games like Doom, Moon, and
+          Wolfenstein.
+        </p>
+      </section>
+    </a>
+    <a href="https://scratch.mit.edu/projects/951780397/" class="section project-link projects righter">
+      <section>
+        <h2 class="project-title">Maze Generator</h2>
+        <p class="project-description">
+          An implementation of recursive backtracking to
+          generate perfect mazes - a small project with a
+          surprising sense of life as the passageways carve
+          themselves into existence.<br />
+          There is also the choice to set a blacklisted object
+          for the maze to not be generated in.
+        </p>
+      </section>
+    </a>
+    <a href="https://scratch.mit.edu/projects/946226429/" class="section project-link projects">
+      <section>
+        <h2 class="project-title">Firework Simulator</h2>
+        <p class="project-description">
+          My first attempt at a simple particle simulator. It
+          imitates a firework display and creates sound as
+          well as visuals.
+        </p>
+      </section>
+    </a>
 
-			<section class="section quote">
-				<p>Ideas are cheap, but curiosity is priceless.</p>
-			</section>
-		</main>
+    <section id="skills" class="section skills">
+      <h2>Skills</h2>
+      <p align="center">
+        <a href="https://skillicons.dev">
+          <img
+            src="https://skillicons.dev/icons?i=git,github,linux,windows,blender,cs,css,html,js,p5js,npm,lua,py,sqlite,vscode&perline=5" />
+        </a>
+      </p>
+    </section>
 
-		<footer id="contact" class="contact">
-			<h2>Contact</h2>
-			<p>
-				If you want to talk ideas, projects, or the mysteries of the
-				universe:
-			</p>
-			<div class="contact-links">
-				<a href="mailto:alfiewpearce@gmail.com">Email</a>
-				<a href="https://github.com/AlfieWPearce">GitHub</a>
-			</div>
-			<p class="copyright">
-				© 2025 Alfie Pearce - Made with questionable decisions and large
-				amounts of tea
-			</p>
-		</footer>
-	</body>
+    <section id="work" class="section work light">
+      <h2>Work Experience</h2>
+      <ul class="columns">
+        <li class="column">
+          <h3>HEALTH UNLIDDED - Volunteer Data Scientist</h3>
+          <p>
+            I researched and analysed healthcare data to
+            support healthcare, transforming raw numbers
+            into stories that mattered. My work
+            contributed to two published reports:
+          </p>
+          <div class="report-links">
+            <a href="https://www.healthunlidded.org.uk/our-reports/mental-health-access-disparities"
+              class="report">Mental Health Access Disparities</a>
+            <a href="https://www.healthunlidded.org.uk/our-reports/covids-affect-on-cancer-screenings"
+              class="report">Missed Appointments, Missed
+              Lives</a>
+          </div>
+          <p>
+            The role sharpened my analytical abilities
+            and showed me the power of clear
+            communication in shaping real-world
+            decisions.
+          </p>
+        </li>
+        <hr class="divider" />
+        <li class="column right">
+          <h3>
+            THE EXCHANGE, Tiptree - Work Experience
+            Placement
+          </h3>
+          <p>
+            A crash course in real responsibility: I
+            prepared food and drinks, served customers,
+            and handled transactions with accuracy
+            during busy hours.<br />
+            I also supported the office with financial
+            and administrative tasks, gaining hands-on
+            experience with Microsoft Excel and the
+            wider 365 Suite.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section quote">
+      <p>Ideas are cheap, but curiosity is priceless.</p>
+    </section>
+  </main>
+
+  <footer id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>
+      If you want to talk ideas, projects, or the mysteries of the
+      universe:
+    </p>
+    <div class="contact-links">
+      <a href="mailto:alfiewpearce@gmail.com">Email</a>
+      <a href="https://github.com/AlfieWPearce">GitHub</a>
+    </div>
+    <p class="copyright">
+      © 2025 Alfie Pearce - Made with questionable decisions and large
+      amounts of tea
+    </p>
+  </footer>
+</body>
+
 </html>
